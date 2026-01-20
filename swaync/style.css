@@ -1,0 +1,168 @@
+/* Catppuccin Mocha Palette */
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+@define-color text   #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background: @surface0;
+}
+
+.notification-row {
+  outline: none;
+  margin: 10px;
+  padding: 0;
+}
+
+.notification {
+  background: transparent;
+  padding: 0;
+  margin: 0px;
+}
+
+.notification-content {
+  background: @base;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid @surface1;
+  margin: 0;
+}
+
+.close-button {
+  background: @red;
+  color: @base;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 5px;
+  margin-right: 5px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @maroon;
+  transition: all 0.2s ease-in-out;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: @surface0;
+  border: 1px solid @surface1;
+  color: @text;
+  transition: all 0.2s ease-in-out;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: @surface1;
+}
+
+.notification-default-action {
+  border-radius: 12px;
+}
+
+/* Control Center */
+.control-center {
+  background: @base;
+  border-radius: 12px;
+  border: 2px solid @mauve;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  margin: 18px;
+  padding: 14px;
+}
+
+/* Widgets */
+.widget-title {
+  color: @mauve;
+  background: @base;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+}
+
+.widget-title > button {
+  font-size: 1rem;
+  color: @text;
+  text-shadow: none;
+  background: @surface0;
+  box-shadow: none;
+  border-radius: 12px;
+  border: 1px solid @surface1;
+}
+
+.widget-title > button:hover {
+  background: @red;
+  color: @base;
+}
+
+.widget-dnd {
+  background: @base;
+  padding: 5px 10px;
+  margin: 5px 10px 10px 10px;
+  border-radius: 12px;
+}
+
+.widget-dnd > switch {
+  background: @surface0;
+  border-radius: 12px;
+  border: 1px solid @surface1;
+}
+
+.widget-dnd > switch:checked {
+  background: @mauve;
+  border: 1px solid @mauve;
+}
+
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 12px;
+}
+
+.widget-mpris {
+  color: @text;
+  background: @base;
+  padding: 5px 10px;
+  margin: 5px 10px 5px 10px;
+  border-radius: 12px;
+}
+
+.widget-mpris > box > button {
+  border-radius: 12px;
+}

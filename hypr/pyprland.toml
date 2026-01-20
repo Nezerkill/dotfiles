@@ -1,0 +1,12 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.telegram]
+animation = "fromRight"        # Выезжает справа
+command = "Telegram"   # Команда запуска
+class = "org.telegram.desktop" # Класс окна (важно для захвата)
+size = "45% 95%"               # Ширина 45%, высота 95%
+max_size = "1920px 100%"
+unfocus = "hide"               # Скрывать, если кликнули на другое окно
+lazy = true                    # Запускать только при первом вызове
+margin = 20
