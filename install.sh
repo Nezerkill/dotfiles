@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 1. Проверяем наличие AUR помощника (yay или paru)
+# --- 1. ПРОВЕРКА AUR HELPER (Paru) ---
 if ! command -v paru &> /dev/null; then
     echo ":: Paru не найден. Устанавливаем..."
     sudo pacman -S --needed base-devel
@@ -11,39 +11,49 @@ if ! command -v paru &> /dev/null; then
     rm -rf paru-bin
 fi
 
-# 2. Установка пакетов из списка
+# --- 2. УСТАНОВКА ПАКЕТОВ ---
 echo ":: Установка пакетов из pkglist.txt..."
-# Читаем файл и скармливаем его paru (он умеет и repo, и AUR)
 paru -S --needed - < pkglist.txt
 
-# 3. Настройка Flatpak (если нужен Telegram)
+# Установка Flatpak (Telegram)
 echo ":: Проверка Flatpak..."
 flatpak install flathub org.telegram.desktop -y
 
-# 4. Создание структуры папок
-echo ":: Настройка конфигов..."
+# --- 3. НАСТРОЙКА КОНФИГОВ ---
+echo ":: Настройка симлинков..."
 mkdir -p ~/.config
 
-# Путь к твоему репозиторию (предполагаем, что мы запускаем скрипт ИЗ папки репозитория)
+# Текущая папка (откуда запущен скрипт)
 DOTFILES_DIR=$(pwd)
 
-# Функция для создания симлинков
+# Функция для папок в ~/.config (Hyprland, Kitty и др.)
 link_config() {
     NAME=$1
-    # Удаляем старый конфиг/папку, если есть
+    echo "-> Линкуем папку: $NAME"
+    # Удаляем старую папку/ссылку
     rm -rf ~/.config/$NAME
-    # Создаем ссылку
-    ln -s $DOTFILES_DIR/$NAME ~/.config/$NAME
-    echo "-> Ссылка для $NAME создана"
+    # Создаем новую ссылку
+    ln -s "$DOTFILES_DIR/$NAME" ~/.config/$NAME
 }
 
-# --- СПИСОК ТОГО, ЧТО ЛИНКУЕМ ---
-# Добавь сюда свои папки
+# --- СПИСОК ПАПОК ---
 link_config "hypr"
 link_config "waybar"
 link_config "swaync"
 link_config "rofi"
 link_config "kitty"
-# link_config "nvim" 
+link_config "fastfetch"
 
-echo ":: Готово! Перезагрузись."
+# --- СПЕЦИАЛЬНЫЕ ФАЙЛЫ (ZSH & Starship) ---
+
+echo "-> Линкуем .zshrc"
+rm -f ~/.zshrc
+ln -s "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
+
+echo "-> Линкуем starship.toml"
+rm -f ~/.config/starship.toml
+ln -s "$DOTFILES_DIR/starship.toml" ~/.config/starship.toml
+
+# --- ФИНАЛ ---
+echo ":: Готово! Все конфиги применены."
+echo ":: Перезагрузись или нажми Super+M (Exit), чтобы увидеть изменения."
