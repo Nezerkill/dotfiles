@@ -13,6 +13,7 @@ fi
 
 # --- 2. УСТАНОВКА ПАКЕТОВ ---
 echo ":: Установка пакетов из pkglist.txt..."
+# Убедись, что 'htop' (и 'btop', если нужен) есть в pkglist.txt!
 paru -S --needed - < pkglist.txt
 
 # Установка Flatpak (Telegram)
@@ -26,23 +27,26 @@ mkdir -p ~/.config
 # Текущая папка (откуда запущен скрипт)
 DOTFILES_DIR=$(pwd)
 
-# Функция для папок в ~/.config (Hyprland, Kitty и др.)
+# Функция для папок в ~/.config (Hyprland, Kitty, Htop и др.)
 link_config() {
     NAME=$1
     echo "-> Линкуем папку: $NAME"
-    # Удаляем старую папку/ссылку
+    # Удаляем старую папку/ссылку или файл, если он мешает
     rm -rf ~/.config/$NAME
     # Создаем новую ссылку
     ln -s "$DOTFILES_DIR/$NAME" ~/.config/$NAME
 }
 
 # --- СПИСОК ПАПОК ---
+# Важно: В твоей папке dotfiles должны лежать папки с такими же именами
 link_config "hypr"
 link_config "waybar"
 link_config "swaync"
 link_config "rofi"
 link_config "kitty"
 link_config "fastfetch"
+link_config "htop"   # <--- ДОБАВЛЕНО (для ~/.config/htop/htoprc)
+# link_config "btop" # <--- Раскомментируй, если решишь перейти на btop
 
 # --- СПЕЦИАЛЬНЫЕ ФАЙЛЫ (ZSH & Starship) ---
 
