@@ -20,6 +20,7 @@ alias ls='eza --icons'
 alias ll='eza -al --icons --group-directories-first'
 alias la='eza -a --icons'
 alias tree='eza --tree --icons'
+alias play="~/.local/bin/mpv-float"
 
 # Замена cat на bat (с подсветкой)
 alias cat='bat --style=plain'

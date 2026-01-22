@@ -46,6 +46,7 @@ link_config "rofi"
 link_config "kitty"
 link_config "fastfetch"
 link_config "htop"   # <--- ДОБАВЛЕНО (для ~/.config/htop/htoprc)
+ling_config "mpv"
 # link_config "btop" # <--- Раскомментируй, если решишь перейти на btop
 
 # --- СПЕЦИАЛЬНЫЕ ФАЙЛЫ (ZSH & Starship) ---
