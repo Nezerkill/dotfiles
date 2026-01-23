@@ -25,56 +25,70 @@
 
 ## ⌨️ Keybindings
 
-**Mod Key:** `Super` (Windows Key)
+Основные клавиши управления. Конфиг заточен под **Vim-style** навигацию.
 
-### 🖥️ Applications & System
-| Keybind | Action |
+**Mod Key:** <kbd>SUPER</kbd> (Windows Key)
+
+### 🚀 Applications
+
+| Keybinding | Action |
 | :--- | :--- |
-| `Mod` + `X` | Open Terminal (Kitty) |
-| `Mod` + `E` | Open File Manager (Nautilus) |
-| `Mod` + `B` | Open Browser (Firefox) |
-| `Mod` + `Space` | App Launcher (Rofi) |
-| `Mod` + `Esc` | Power Menu (Wlogout) |
-| `Mod` + `G` | Lock Screen |
-| `Mod` + `Shift` + `M` | Exit Hyprland |
+| <kbd>SUPER</kbd> + <kbd>X</kbd> | Открыть терминал (Kitty) |
+| <kbd>SUPER</kbd> + <kbd>E</kbd> | Файловый менеджер (Nautilus) |
+| <kbd>SUPER</kbd> + <kbd>B</kbd> | Браузер (Firefox) |
+| <kbd>SUPER</kbd> + <kbd>SPACE</kbd> | Меню приложений (Rofi) |
+| <kbd>SUPER</kbd> + <kbd>T</kbd> | Telegram (Scratchpad / Pyprland) |
+| <kbd>SUPER</kbd> + <kbd>N</kbd> | Центр уведомлений (SwayNC) |
 
 ### 🪟 Window Management
-| Keybind | Action |
-| :--- | :--- |
-| `Mod` + `Q` | Close Active Window |
-| `Mod` + `F` | Toggle Fullscreen |
-| `Mod` + `Alt` + `V` | Toggle Floating Mode |
-| `Mod` + `H` / `J` / `K` / `L` | Move Focus (Left/Down/Up/Right) |
-| `Mod` + `Shift` + `H` / `J` / `K` / `L` | Move Window (Left/Down/Up/Right) |
-| `Mod` + `R` | **Enter Resize Mode** (Use HJKL to resize, ESC to exit) |
 
-### 📦 Workspaces
-| Keybind | Action |
+| Keybinding | Action |
 | :--- | :--- |
-| `Mod` + `1` - `5` | Switch to Workspace 1-5 |
-| `Mod` + `Shift` + `1` - `5` | Move Window to Workspace 1-5 |
-| `Mod` + `Tab` | Switch to Previous Workspace |
-| `Mod` + `Scroll` | Cycle through Workspaces |
+| <kbd>SUPER</kbd> + <kbd>Q</kbd> | Закрыть активное окно |
+| <kbd>SUPER</kbd> + <kbd>F</kbd> | Полноэкранный режим |
+| <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>V</kbd> | Переключить в плавающий режим (Float) |
+| <kbd>SUPER</kbd> + <kbd>C</kbd> | Отцентровать плавающее окно |
+| <kbd>SUPER</kbd> + <kbd>G</kbd> | Группировка окон (Togglegroup / Tabs) |
+| <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>H</kbd>/<kbd>L</kbd> | Переключение внутри группы |
 
-### 🛠️ Utilities & Scripts
-| Keybind | Action |
-| :--- | :--- |
-| `Print` | Screenshot (Full Screen) |
-| `Mod` + `Shift` + `S` | Screenshot (Select Area) |
-| `Mod` + `Print` | Screenshot (Edit in Swappy) |
-| `Mod` + `V` | Clipboard History |
-| `Mod` + `.` | Emoji Picker |
-| `Mod` + `T` | Toggle Telegram (Scratchpad) |
-| `Mod` + `N` | Toggle Notifications Center |
-| `Mod` + `F1` | Toggle Game Mode |
+### 🧭 Navigation (Vim Style)
 
-### 💻 Laptop Function Keys
-| Key | Action |
+| Keybinding | Action |
 | :--- | :--- |
-| `F2` / `F3` (Audio) | Volume Down / Up |
-| `F1` (Mute) | Mute Audio |
-| `F5` / `F6` (Bright) | Brightness Down / Up |
-| `Lid Close` | Lock Screen |
+| <kbd>SUPER</kbd> + <kbd>H</kbd> / <kbd>J</kbd> / <kbd>K</kbd> / <kbd>L</kbd> | Фокус на окно (Vim keys) |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>H</kbd> / <kbd>J</kbd> / <kbd>K</kbd> / <kbd>L</kbd> | Перемещение окна (Vim keys) |
+| <kbd>SUPER</kbd> + <kbd>1</kbd> - <kbd>5</kbd> | Переключение воркспейса |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>1</kbd> - <kbd>5</kbd> | Отправить окно на воркспейс |
+| <kbd>SUPER</kbd> + <kbd>TAB</kbd> | Переключить на последнее окно |
+
+### 🛠️ Utilities & Tools
+
+| Keybinding | Action |
+| :--- | :--- |
+| <kbd>SUPER</kbd> + <kbd>O</kbd> | **OCR**: Распознать текст с экрана (RU/EN) |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>V</kbd> | История буфера обмена (Cliphist) |
+| <kbd>SUPER</kbd> + <kbd>.</kbd> | Эмодзи пикер |
+| <kbd>SUPER</kbd> + <kbd>F1</kbd> | Game Mode (Откл. анимации и эффекты) |
+| <kbd>SUPER</kbd> + <kbd>M</kbd> | Mute/Unmute микрофона |
+
+### 📸 Screenshots
+
+| Keybinding | Action |
+| :--- | :--- |
+| <kbd>Print</kbd> | Скриншот всего экрана |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd> | Скриншот выделенной области |
+| <kbd>SUPER</kbd> + <kbd>Print</kbd> | Скриншот с редактированием (Swappy) |
+
+### 🔄 Submaps (Modes)
+
+| Mode Trigger | Description |
+| :--- | :--- |
+| <kbd>SUPER</kbd> + <kbd>R</kbd> | **Resize Mode**: Изменение размера окон через HJKL |
+| <kbd>SUPER</kbd> + <kbd>0</kbd> | **System Mode**: Блокировка (L), Сон (S), Релоад (R) |
+| <kbd>SUPER</kbd> + <kbd>ESC</kbd> | **Wlogout**: Графическое меню выхода |
+
+---
+> 💡 **Tip:** Hold `Caps Lock` to act as `Ctrl`, tap for `Esc` (configured via Kanata).
 
 ## 🚀 Установка
 
