@@ -1,4 +1,5 @@
-# --- Внешний вид ---
+# HTOP CONFIG
+
 hide_kernel_threads=1
 hide_userland_threads=1
 shadow_other_users=0
@@ -13,10 +14,8 @@ detailed_cpu_time=0
 cpu_count_from_one=0
 show_cpu_usage=1
 show_cpu_frequency=1
-# Показывать температуру (Важно для Xeon и Ноутбука)
 show_cpu_temperature=1
 
-# --- Цветовая схема (Black Night - стильная темная) ---
 color_scheme=6
 enable_mouse=1
 delay=15
@@ -25,6 +24,5 @@ left_meter_modes=1 1 1
 right_meters=Tasks LoadAverage Uptime Battery
 right_meter_modes=2 2 2 2
 
-# --- Сортировка по потреблению CPU ---
 sort_key=46
 sort_direction=0

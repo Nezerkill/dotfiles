@@ -1,50 +1,105 @@
-# --- ZSH CONFIGURATION ---
+# ZSH CONFIG
 
-# История команд
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+)
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+
+source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
+
+# ALIASES
+alias update='paru -Syu'
+alias install='paru -S'
+alias remove='paru -Rns'
+alias search='paru -Ss'
+alias clean='paru -Sc'
+alias orphan='paru -Qtdq | paru -Rns -'
+
+alias ls='eza --icons --color=auto'
+alias ll='eza -lah --icons --color=auto'
+alias la='eza -A --icons --color=auto'
+alias lt='eza --tree --icons --color=auto'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gco='git checkout'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+alias gd='git diff'
+
+alias c='clear'
+alias h='history'
+alias s='sudo'
+alias v='micro'
+alias cat='bat --style=plain'
+
+alias hr='hyprctl reload'
+alias hk='hyprctl keyword'
+alias hs='hyprctl systemsinfo'
+
+# ENVIRONMENT
+export EDITOR="micro"
+export VISUAL="micro"
+export TERMINAL="kitty"
+export BROWSER="firefox"
+
+# HISTORY
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
 
-# --- ПЛАГИНЫ (Arch Linux Paths) ---
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# KEY BINDINGS
+bindkey -v
+export KEYTIMEOUT=1
 
-# --- STARSHIP (Промпт) ---
-eval "$(starship init zsh)"
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
-# --- АЛИАСЫ (Shortcuts) ---
-# Файловые операции (используем eza вместо ls)
-alias ls='eza --icons'
-alias ll='eza -al --icons --group-directories-first'
-alias la='eza -a --icons'
-alias tree='eza --tree --icons'
-alias play="~/.local/bin/mpv-float"
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]]; then
+    echo -ne '\e[1 q'
+  else
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+  zle -K viins
+  echo -ne "\e[5 q"
+}
+zle -N zle-line-init
 
-# Замена cat на bat (с подсветкой)
-alias cat='bat --style=plain'
+# INTEGRATIONS
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Редакторы
-alias v='nvim'
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
-# Система
-alias update='paru' # Или 'sudo pacman -Syu'
-alias off='shutdown now'
-alias reboot='systemctl reboot'
-
-# Git
-alias g='git'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
-alias gs='git status'
-
-# Конфиги (быстрый доступ)
-alias conf-hypr='nano ~/.config-dev/dotfiles/hypr/hyprland.conf'
-alias conf-zsh='nano ~/.config-dev/dotfiles/zsh/.zshrc'
-alias conf-waybar='nano ~/.config-dev/dotfiles/waybar/config'
-
-# --- ПРИВЕТСТВИЕ ---
-# Запускаем fastfetch при открытии терминала
-fastfetch
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
