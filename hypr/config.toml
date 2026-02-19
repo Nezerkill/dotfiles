@@ -3,8 +3,8 @@ plugins = ["scratchpads"]
 
 [scratchpads.telegram]
 animation = "fromRight"        # Выезжает справа
-command = "Telegram"   # Команда запуска
-class = "org.telegram.desktop" # Класс окна (важно для захвата)
+command = "/home/nezerkill/Загрузки/tsetup.6.5.1/Telegram/Telegram"   # Команда запуска
+class = "org.telegram.desktop._6c69cf97339e7074281db0f79e937723" # Класс окна
 size = "45% 95%"               # Ширина 45%, высота 95%
 max_size = "1920px 100%"
 unfocus = "hide"               # Скрывать, если кликнули на другое окно
