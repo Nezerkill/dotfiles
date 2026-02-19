@@ -5,7 +5,7 @@
 ![Catppuccin](https://img.shields.io/badge/Catppuccin-Mocha-cea0ca?style=for-the-badge&logo=catppuccin&logoColor=white)
 
 Моя персональная конфигурация для **Arch Linux (CachyOS)** на базе **Hyprland**.
-Система настроена для максимальной производительности, эстетики (Catppuccin Mocha) и удобства разработки.
+Система настроена для максимальной производительности, эстетики и удобства разработки.
 
 ![Screenshot](screenshots/preview.png)
 
