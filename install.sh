@@ -27,9 +27,13 @@ DOTFILES_DIR=$(pwd)
 
 link_config() {
     NAME=$1
-    echo "-> Линкуем папку: $NAME"
-    rm -rf ~/.config/$NAME
-    ln -s "$DOTFILES_DIR/$NAME" ~/.config/$NAME
+    if [ -d "$DOTFILES_DIR/$NAME" ]; then
+        echo "-> Линкуем папку: $NAME"
+        rm -rf ~/.config/$NAME
+        ln -s "$DOTFILES_DIR/$NAME" ~/.config/$NAME
+    else
+        echo "-> Пропущено: $NAME (папка не найдена)"
+    fi
 }
 
 link_config "hypr"

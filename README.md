@@ -71,6 +71,13 @@
 | <kbd>SUPER</kbd> + <kbd>F1</kbd> | Game Mode (Откл. анимации и эффекты) |
 | <kbd>SUPER</kbd> + <kbd>M</kbd> | Mute/Unmute микрофона |
 
+### 📦 Git Aliases
+
+| Alias | Command |
+| :--- | :--- |
+| `grs` | `git restore --staged` |
+| `gr` | `git restore` |
+
 ### 📸 Screenshots
 
 | Keybinding | Action |

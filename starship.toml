@@ -8,6 +8,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:#333333)\
+$cmd_duration\
 \n$character"""
 
 [os]

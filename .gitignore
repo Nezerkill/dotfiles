@@ -1,0 +1,17 @@
+# Скриншоты
+screenshots/*.png
+
+# История редакторов
+micro/buffers/
+*.swp
+*~
+
+# Логи
+*.log
+
+# Временные файлы
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak

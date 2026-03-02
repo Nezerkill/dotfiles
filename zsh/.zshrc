@@ -41,6 +41,8 @@ alias gco='git checkout'
 alias gp='git push'
 alias gl='git log --oneline --graph --decorate'
 alias gd='git diff'
+alias grs='git restore --staged'
+alias gr='git restore'
 
 alias c='clear'
 alias h='history'
@@ -57,6 +59,9 @@ export EDITOR="micro"
 export VISUAL="micro"
 export TERMINAL="kitty"
 export BROWSER="firefox"
+
+# FASTFETCH (при запуске терминала)
+fastfetch
 
 # HISTORY
 HISTFILE=~/.zsh_history

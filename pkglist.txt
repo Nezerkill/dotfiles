@@ -1,18 +1,20 @@
-# --- Графический интерфейс (Hyprland & Rice) ---
+# WM & COMPOSITOR
 hyprland
 hyprlock
 hypridle
-hyprpaper
 hyprpicker
 xdg-desktop-portal-hyprland
+
+# BAR & LAUNCHER
 waybar
 rofi
-swaync
 swww
 nwg-dock-hyprland
 nwg-look
 pyprland
 uwsm
+
+# THEME
 catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
 papirus-icon-theme
@@ -21,7 +23,7 @@ qt6-wayland
 qt6ct
 polkit-gnome
 
-# --- Терминал и Шелл ---
+# TERMINAL & SHELL
 kitty
 alacritty
 zsh
@@ -31,6 +33,8 @@ fastfetch
 btop
 cava
 cmatrix
+
+# UTILS
 eza
 fzf
 ripgrep
@@ -38,14 +42,14 @@ jq
 bat
 lsd
 
-# --- Редакторы и Разработка ---
+# EDITORS
 code
 neovim
 micro
 git
 base-devel
 
-# --- Интернет и Общение ---
+# INTERNET & COMMUNICATION
 firefox
 telegram-desktop
 vesktop
@@ -53,7 +57,7 @@ spotify
 obsidian
 zerotier-one
 
-# --- Игры (Gaming) ---
+# GAMING
 steam
 lutris
 heroic-games-launcher
@@ -65,7 +69,7 @@ gamemode
 lib32-gamemode
 mangohud
 
-# --- Утилиты и Инструменты ---
+# SYSTEM UTILS
 nautilus
 ark
 file-roller
@@ -91,7 +95,13 @@ sddm
 mpv
 mpv-mpris
 python-vapoursynth
-# --- Шрифты ---
+
+# OCR (для скриншотов и распознавания текста)
+tesseract
+tesseract-data-eng
+tesseract-data-rus
+
+# FONTS
 ttf-jetbrains-mono-nerd
 ttf-fira-code
 noto-fonts
