@@ -13,14 +13,15 @@
 @import "styles/states.css";
 
 .module {
-	margin-bottom: -1px;
+	margin-bottom: 0;
 }
 
 #waybar {
 	background-color: @outline;
+	border-radius: 0;
 }
 #waybar > box {
-	margin: 4px;
+	margin: 0;
 	background-color: @main-bg;
 }
 
